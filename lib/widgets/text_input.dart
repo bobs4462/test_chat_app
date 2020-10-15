@@ -18,7 +18,7 @@ class TextInput extends StatelessWidget {
   @override
   Widget build(BuildContext ctx) {
     return Container(
-      height: (Configuration().getScreenHeight(ctx) - appBarHeight) * 0.1,
+      height: (Configuration().getScreenHeight(ctx) - appBarHeight) * 0.12,
       child: Card(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

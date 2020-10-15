@@ -21,7 +21,7 @@ class MessagesList extends StatelessWidget {
     });
     var height = Configuration().getScreenHeight(ctx);
     return Container(
-      height: (height - appBarHeight) * 0.89,
+      height: (height - appBarHeight) * 0.85,
       child: ListView.builder(
         // reverse: true,
         controller: controller,
