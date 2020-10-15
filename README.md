@@ -25,7 +25,7 @@ _this is italic text_
 ```
 - strikethrough text
 ```
-~this is italic text~
+~this is strikethrough text~
 ```
 
 The application support adding new messages (you can format message and add
