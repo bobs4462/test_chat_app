@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lcc/models/channel.dart';
 import 'package:lcc/screens/message.dart';
-import 'package:lcc/models/message.dart';
+import 'package:lcc/services/messages_service.dart';
+import 'package:lcc/widgets/rich_text.dart';
 
 class ChannelTile extends StatelessWidget {
   final Channel channel;
@@ -12,18 +13,26 @@ class ChannelTile extends StatelessWidget {
       onTap: () {
         Navigator.of(ctx).pushNamed(
           MessageScreen.route,
-          arguments: {'channelTitle': channel.title},
+          arguments: {
+            'channelTitle': channel.title,
+            'channelId': channel.id,
+          },
         );
       },
-      child: Card(
-        elevation: 3,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(color: Theme.of(ctx).primaryColor),
+          ),
+        ),
         child: ListTile(
           leading: CircleAvatar(
             child: Text(channel.emoji),
+            backgroundColor: Colors.blueGrey,
           ),
           title: Text(channel.title),
-          subtitle: Text(
-            MessagesService.getMessageText(channel.lastMessageId),
+          subtitle: RichTextMessage(
+            MessagesService().getLastChannelMessage(channel.id),
           ),
         ),
       ),

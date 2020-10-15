@@ -1,16 +1,37 @@
-# linagora_chat_client
+# Test chat client
 
-A new Flutter project.
+Test chat application, with two screens:
+- Channels
+- Messages of selected channel
+
+No data is fetched from any source, instead all the locally used data is
+hardcoded into the source code, and can be found in data directory.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Launch the application on your connected phone, or emulator:
+```sh
+flutter run --release
+```
 
-A few resources to get you started if this is your first Flutter project:
+Messages screen supports basic formating:
+- bold text
+```
+*this is bold text*
+```
+- italic text
+```
+_this is italic text_
+```
+- strikethrough text
+```
+~this is italic text~
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+The application support adding new messages (you can format message and add
+emojis). But because it doesn't have any backing store, any changes are not
+persistent, and will be lost with application restart.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Additionally application makes heavy use of material design, so on apple
+devises it will look weird.

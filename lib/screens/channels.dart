@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lcc/services/channels_service.dart';
+import 'package:lcc/services/configuration.dart';
 import 'package:lcc/widgets/channel_tile.dart';
-import 'package:lcc/data/channels.dart';
 
 class ChannelsScreen extends StatelessWidget {
   static final String route = '/channels';
+  final channels = ChannelsService().getChannels();
   @override
   Widget build(BuildContext ctx) {
     return Scaffold(
@@ -12,12 +14,12 @@ class ChannelsScreen extends StatelessWidget {
         elevation: 3,
       ),
       body: Container(
-        height: 500,
+        height: Configuration().getScreenHeight(ctx),
         child: ListView.builder(
             itemBuilder: (ctx, index) {
-              return ChannelTile(CHANNELS[index]);
+              return ChannelTile(channels[index]);
             },
-            itemCount: CHANNELS.length),
+            itemCount: channels.length),
       ),
     );
   }
