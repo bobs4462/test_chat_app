@@ -28,7 +28,7 @@ _this is italic text_
 ~this is strikethrough text~
 ```
 
-The application support adding new messages (you can format message and add
+The application supports adding new messages (you can format message and add
 emojis). But because it doesn't have any backing store, any changes are not
 persistent, and will be lost with application restart.
 
